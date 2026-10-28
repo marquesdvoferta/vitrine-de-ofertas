@@ -1,0 +1,742 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffe600">
+
+  <title>Vitrine de Ofertas | Achados e Links Afiliados</title>
+
+  <meta name="description" content="Descubra produtos selecionados e confira as ofertas diretamente nos anúncios do Mercado Livre.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <style>
+    :root {
+      --amarelo: #ffe600;
+      --azul: #3483fa;
+      --azul-escuro: #2968c8;
+      --fundo: #ededed;
+      --texto: #222;
+      --cinza: #666;
+      --branco: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: var(--fundo);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1200px, 94%);
+      margin: auto;
+    }
+
+    /* AVISO DE TRANSPARÊNCIA */
+    .aviso-topo {
+      padding: 10px 3%;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #49421a;
+      background: #fff8c5;
+      border-bottom: 1px solid #e5d778;
+    }
+
+    .aviso-topo strong {
+      color: #27220b;
+    }
+
+    /* CABEÇALHO */
+    header {
+      background: var(--amarelo);
+      box-shadow: 0 2px 5px #00000012;
+    }
+
+    .topo {
+      display: grid;
+      grid-template-columns: 270px minmax(150px, 1fr) auto;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 0;
+    }
+
+    /* LOGO ORIGINAL */
+    .marca-afiliada {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #222;
+      min-width: 0;
+    }
+
+    .logo-afiliada {
+      width: 62px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .texto-marca strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+
+    .texto-marca small {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: normal;
+    }
+
+    /* PESQUISA */
+    .pesquisa {
+      height: 44px;
+      display: flex;
+      background: white;
+      border-radius: 5px;
+      box-shadow: 0 1px 3px #00000018;
+      overflow: hidden;
+    }
+
+    .pesquisa input {
+      flex: 1;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      padding: 0 14px;
+      font-size: 14px;
+    }
+
+    .pesquisa button {
+      width: 48px;
+      border: 0;
+      border-left: 1px solid #eee;
+      background: white;
+      font-size: 23px;
+      cursor: pointer;
+    }
+
+    /* BOTÕES */
+    .botao-topo,
+    .botao-oferta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--azul);
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      transition: background .2s;
+    }
+
+    .botao-topo {
+      padding: 13px 16px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .botao-oferta {
+      padding: 14px 16px;
+      font-size: 15px;
+    }
+
+    .botao-topo:hover,
+    .botao-oferta:hover {
+      background: var(--azul-escuro);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 23px;
+      padding: 0 0 13px;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* DESTAQUE */
+    .destaque {
+      margin: 20px 0;
+      padding: 23px;
+      background: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .destaque h1 {
+      margin: 0 0 8px;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.2;
+    }
+
+    .destaque p {
+      margin: 0;
+      color: var(--cinza);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .destaque .botao-oferta {
+      min-width: 225px;
+    }
+
+    /* LISTA */
+    .cabecalho-lista {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 25px 0 15px;
+    }
+
+    .cabecalho-lista h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .cabecalho-lista p {
+      margin: 0;
+      color: var(--cinza);
+      font-size: 12px;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .produto {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: white;
+      border: 1px solid #e4e4e4;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .produto:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px #00000012;
+    }
+
+    .foto {
+      height: 225px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .icone-produto {
+      font-size: 65px;
+      line-height: 1.2;
+    }
+
+    .legenda-foto {
+      margin-top: 10px;
+      color: #777;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .etiqueta {
+      margin-bottom: 7px;
+      color: #4774a8;
+      font-size: 11px;
+    }
+
+    .info h3 {
+      margin: 0 0 9px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .info p {
+      margin: 0 0 18px;
+      color: var(--cinza);
+      font-size: 13px;
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .info .botao-oferta {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .sem-resultados {
+      display: none;
+      margin-bottom: 25px;
+      padding: 25px;
+      text-align: center;
+      background: white;
+      border-radius: 8px;
+    }
+
+    /* RODAPÉ */
+    footer {
+      padding: 23px 0;
+      background: white;
+      border-top: 1px solid #ddd;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    /* CELULAR */
+    @media (max-width: 850px) {
+      .topo {
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+      }
+
+      .pesquisa {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .botao-topo {
+        padding: 11px;
+        font-size: 12px;
+      }
+
+      .produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .destaque {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .destaque .botao-oferta {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .logo-afiliada {
+        width: 48px;
+        height: 39px;
+      }
+
+      .texto-marca strong {
+        font-size: 15px;
+      }
+
+      .texto-marca small {
+        font-size: 10px;
+      }
+
+      nav {
+        gap: 13px;
+        font-size: 12px;
+      }
+
+      .produtos {
+        gap: 8px;
+      }
+
+      .foto {
+        height: 145px;
+        padding: 7px;
+      }
+
+      .icone-produto {
+        font-size: 45px;
+      }
+
+      .info {
+        padding: 11px;
+      }
+
+      .info h3 {
+        font-size: 14px;
+      }
+
+      .info p {
+        font-size: 11px;
+      }
+
+      .info .botao-oferta {
+        padding: 11px 6px;
+        font-size: 13px;
+      }
+
+      .cabecalho-lista {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- AVISO VISÍVEL ANTES DO CABEÇALHO -->
+  <div class="aviso-topo">
+    <strong>Transparência:</strong>
+    somos uma vitrine independente de afiliados.
+    Podemos receber comissão por compras feitas por nossos links,
+    sem custo adicional para você. Não somos o site oficial do Mercado Livre.
+  </div>
+
+  <header>
+    <div class="container">
+
+      <div class="topo">
+
+        <!-- LOGO ORIGINAL -->
+        <a href="#inicio" class="marca-afiliada" aria-label="Vitrine de Ofertas - início">
+
+          <svg
+            class="logo-afiliada"
+            viewBox="0 0 100 76"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="tituloLogo"
+          >
+            <title id="tituloLogo">Vitrine de Ofertas Afiliadas</title>
+
+            <rect
+              x="2" y="2" width="96" height="72"
+              rx="22" fill="#FFE600"
+            />
+
+            <path
+              d="M24 29 H43 C50 29 53 35 53 41"
+              fill="none"
+              stroke="#2463B8"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M76 47 H59 C52 47 49 41 49 35"
+              fill="none"
+              stroke="#2463B8"
+              stroke-width="7"
+              stroke-linecap="round"
+            />
+
+            <circle cx="23" cy="29" r="9" fill="#2463B8"/>
+            <circle cx="77" cy="47" r="9" fill="#2463B8"/>
+
+            <path
+              d="M40 49 L55 34 L70 49 L55 64 Z"
+              fill="#FFFFFF"
+              stroke="#222222"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+            />
+
+            <circle cx="55" cy="49" r="3.5" fill="#2463B8"/>
+          </svg>
+
+          <span class="texto-marca">
+            <strong>Vitrine de Ofertas</strong>
+            <small>Achados e links afiliados</small>
+          </span>
+
+        </a>
+
+        <!-- PESQUISA -->
+        <form class="pesquisa" id="formPesquisa" role="search">
+          <input
+            type="search"
+            id="pesquisa"
+            placeholder="Buscar produtos nesta vitrine..."
+            aria-label="Buscar produtos"
+          >
+          <button type="submit" aria-label="Pesquisar">⌕</button>
+        </form>
+
+        <a
+          class="botao-topo"
+          href="https://meli.la/1rb5n4b"
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+        >
+          Ver oferta ↗
+        </a>
+
+      </div>
+
+      <nav aria-label="Categorias">
+        <a href="#produtos">Todos os produtos</a>
+        <a href="#produtos">Casa e cozinha</a>
+        <a href="#produtos">Limpeza</a>
+        <a href="#produtos">Tecnologia</a>
+        <a href="#produtos">Utilidades</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container" id="inicio">
+
+    <section class="destaque">
+      <div>
+        <h1>Descubra produtos para facilitar seu dia</h1>
+        <p>
+          Explore nossa seleção e consulte fotos, características
+          e condições diretamente no anúncio.
+        </p>
+      </div>
+
+      <a
+        class="botao-oferta"
+        href="https://meli.la/1rb5n4b"
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+      >
+        Ver oferta no Mercado Livre ↗
+      </a>
+    </section>
+
+    <div class="cabecalho-lista" id="produtos">
+      <h2>Produtos em destaque</h2>
+      <p>Sem preços fixos: consulte o anúncio para ver as condições atuais.</p>
+    </div>
+
+    <section class="produtos" id="listaProdutos">
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">❄️</span>
+          <span class="legenda-foto">Climatizador portátil</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Casa</span>
+          <h3>Climatizador de ar portátil</h3>
+          <p>Confira funções, características e avaliações no anúncio.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🚁</span>
+          <span class="legenda-foto">Drone com câmera</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Tecnologia</span>
+          <h3>Drone com câmera</h3>
+          <p>Consulte os recursos, acessórios e especificações do modelo.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🚿</span>
+          <span class="legenda-foto">Lavadora de alta pressão</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Limpeza</span>
+          <h3>Lavadora de alta pressão</h3>
+          <p>Confira potência, acessórios e recomendações de uso.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🧹</span>
+          <span class="legenda-foto">Escova elétrica</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Utilidades</span>
+          <h3>Escova elétrica de limpeza</h3>
+          <p>Veja os acessórios e as superfícies indicadas pelo fabricante.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🛏️</span>
+          <span class="legenda-foto">Travesseiros</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Quarto</span>
+          <h3>Kit de travesseiros</h3>
+          <p>Confira material, dimensões e instruções de lavagem.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">💡</span>
+          <span class="legenda-foto">Lâmpada aquecedora</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Acessórios</span>
+          <h3>Lâmpada aquecedora para répteis</h3>
+          <p>Confira potência, compatibilidade e requisitos de instalação.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🛠️</span>
+          <span class="legenda-foto">Equipamento esportivo</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Equipamentos</span>
+          <h3>Equipamento esportivo</h3>
+          <p>Leia a descrição do anúncio e confira as regras aplicáveis.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="produto">
+        <div class="foto">
+          <span class="icone-produto" aria-hidden="true">🥤</span>
+          <span class="legenda-foto">Liquidificador</span>
+        </div>
+        <div class="info">
+          <span class="etiqueta">Cozinha</span>
+          <h3>Liquidificador elétrico</h3>
+          <p>Verifique capacidade, potência, voltagem e acessórios.</p>
+          <a class="botao-oferta" href="https://meli.la/1rb5n4b"
+             target="_blank" rel="sponsored nofollow noopener noreferrer">
+            Ver oferta ↗
+          </a>
+        </div>
+      </article>
+
+    </section>
+
+    <div class="sem-resultados" id="semResultados">
+      Nenhum produto encontrado. Tente buscar por outro nome.
+    </div>
+
+    <aside class="aviso-topo" style="margin-bottom:25px; border:1px solid #e5d778; border-radius:6px;">
+      Os cartões são demonstrativos e ainda não têm fotos reais incorporadas.
+      O link configurado é o único link de afiliada fornecido até agora.
+      Antes de divulgar a página, associe cada produto ao seu anúncio correto.
+    </aside>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Vitrine de Ofertas</strong>
+      <p>Vitrine independente de produtos e links afiliados.</p>
+      <p>
+        Este site não é oficial nem representa o Mercado Livre.
+        Os preços e a disponibilidade devem ser consultados no anúncio.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const campoPesquisa = document.getElementById("pesquisa");
+    const formulario = document.getElementById("formPesquisa");
+    const produtos = [...document.querySelectorAll(".produto")];
+    const avisoVazio = document.getElementById("semResultados");
+
+    function filtrarProdutos() {
+      const termo = campoPesquisa.value
+        .trim()
+        .toLocaleLowerCase("pt-BR");
+
+      let encontrados = 0;
+
+      produtos.forEach(function(produto) {
+        const corresponde = produto.innerText
+          .toLocaleLowerCase("pt-BR")
+          .includes(termo);
+
+        produto.hidden = !corresponde;
+
+        if (corresponde) {
+          encontrados++;
+        }
+      });
+
+      avisoVazio.style.display =
+        encontrados === 0 ? "block" : "none";
+    }
+
+    formulario.addEventListener("submit", function(evento) {
+      evento.preventDefault();
+      filtrarProdutos();
+
+      document.getElementById("produtos").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    campoPesquisa.addEventListener("input", filtrarProdutos);
+  </script>
+
+</body>
+</html>
