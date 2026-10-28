@@ -3,23 +3,35 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Vitrine de Ofertas | Achados para o seu dia a dia</title>
+  <title>Vitrine de Ofertas | Achados para Casa, Tecnologia e Quintal</title>
 
-  <meta name="description" content="Encontre ofertas e produtos para casa, cozinha, tecnologia, limpeza, ferramentas, campo e quintal na Vitrine de Ofertas.">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="Encontre ofertas e produtos para casa, cozinha, celulares, tecnologia, limpeza, ferramentas, campo e quintal na Vitrine de Ofertas.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#ffe600">
 
   <link rel="canonical" href="https://marquesdvoferta.github.io/">
 
-  <meta property="og:title" content="Vitrine de Ofertas">
-  <meta property="og:description" content="Achados para facilitar seu dia. Explore produtos e ofertas do Mercado Livre.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Vitrine de Ofertas">
+  <meta property="og:title" content="Vitrine de Ofertas">
+  <meta property="og:description" content="Achados para facilitar seu dia. Explore produtos e ofertas.">
   <meta property="og:url" content="https://marquesdvoferta.github.io/">
 
-  <!-- Verificação do Google -->
   <meta name="google-site-verification" content="zKf0s4z3G5lWo8_UDQFrB1APhoy98aSeNJ8srN97w3k">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Vitrine de Ofertas",
+    "url": "https://marquesdvoferta.github.io/",
+    "inLanguage": "pt-BR",
+    "description": "Site independente de ofertas e produtos para o dia a dia."
+  }
+  </script>
 
   <style>
     :root {
@@ -29,8 +41,8 @@
       --fundo: #f5f5f5;
       --texto: #292929;
       --cinza: #666;
-      --branco: #fff;
       --borda: #e5e5e5;
+      --branco: #fff;
     }
 
     * {
@@ -41,7 +53,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 100px;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -61,9 +73,11 @@
       font: inherit;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid #111;
+      outline-offset: 3px;
     }
 
     .container {
@@ -75,22 +89,22 @@
 
     header {
       background: var(--amarelo);
-      padding: 17px 0;
+      padding: 16px 0;
     }
 
     .cabecalho {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .logo {
-      color: #222;
       font-size: 25px;
       font-weight: 800;
       letter-spacing: -1px;
+      color: #222;
     }
 
     .logo span {
@@ -101,10 +115,10 @@
       flex: 1;
       max-width: 510px;
       display: flex;
-      background: white;
+      background: var(--branco);
+      border: 1px solid #ddd;
       border-radius: 7px;
       overflow: hidden;
-      border: 1px solid #ddd;
     }
 
     .busca input {
@@ -113,38 +127,34 @@
       padding: 13px 15px;
       border: none;
       outline: none;
-      background: white;
-      color: var(--texto);
     }
 
     .busca button {
       width: 52px;
       flex-shrink: 0;
       border: none;
-      background: white;
       border-left: 1px solid #eee;
+      background: white;
       cursor: pointer;
-      font-size: 22px;
-    }
-
-    .busca button:hover {
-      background: #f7f7f7;
+      font-size: 24px;
     }
 
     .botao-topo {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      padding: 12px 16px;
       background: var(--azul);
       color: white;
-      font-weight: bold;
-      padding: 12px 17px;
-      border-radius: 7px;
-      transition: 0.2s;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
     }
 
-    .botao-topo:hover {
+    .botao-topo:hover,
+    .botao-principal:hover,
+    .botao-card:hover {
       background: var(--azul-escuro);
     }
 
@@ -157,11 +167,10 @@
 
     .menu {
       display: flex;
-      align-items: center;
-      gap: 26px;
+      gap: 24px;
       overflow-x: auto;
       white-space: nowrap;
-      padding: 14px 0;
+      padding: 13px 0;
     }
 
     .menu a {
@@ -170,14 +179,14 @@
     }
 
     .menu a:hover {
-      color: var(--azul);
+      color: var(--azul-escuro);
     }
 
     /* DESTAQUE PRINCIPAL */
 
     .hero {
       background: white;
-      padding: 48px 0 34px;
+      padding: 42px 0 31px;
       text-align: center;
     }
 
@@ -194,22 +203,24 @@
       border-radius: 30px;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.6px;
-      margin-bottom: 17px;
+      letter-spacing: .5px;
+      margin-bottom: 16px;
     }
 
-    .hero h1 {
-      font-size: clamp(30px, 5vw, 46px);
+    h1 {
+      font-size: clamp(31px, 5vw, 46px);
       line-height: 1.12;
       letter-spacing: -1px;
-      margin-bottom: 13px;
+      margin-bottom: 12px;
     }
 
     .hero p {
       color: var(--cinza);
       font-size: 16px;
-      margin-bottom: 25px;
+      margin-bottom: 23px;
     }
+
+    /* BOTÃO PRINCIPAL DO MERCADO LIVRE */
 
     .botao-principal {
       display: flex;
@@ -217,8 +228,8 @@
       justify-content: center;
       gap: 12px;
       width: 100%;
-      max-width: 390px;
-      min-height: 64px;
+      max-width: 410px;
+      min-height: 66px;
       margin: 0 auto;
       padding: 15px 20px;
       background: var(--azul);
@@ -227,73 +238,67 @@
       font-weight: 800;
       border-radius: 10px;
       box-shadow: 0 5px 12px #3483fa40;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .botao-principal:hover {
       transform: translateY(-3px);
-      background: var(--azul-escuro);
       box-shadow: 0 8px 18px #3483fa50;
     }
 
     .icone-carrinho {
-      font-size: 24px;
+      font-size: 26px;
     }
 
     .texto-apoio {
       display: block;
-      margin-top: 11px;
-      font-size: 12px;
+      margin-top: 9px;
       color: #777;
+      font-size: 12px;
     }
 
     .atalhos {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 28px;
+      gap: 8px;
+      margin-top: 25px;
     }
 
     .atalhos a {
       background: #f5f5f5;
       border: 1px solid #e7e7e7;
       border-radius: 30px;
-      padding: 9px 14px;
+      padding: 8px 13px;
       font-size: 13px;
-      transition: 0.2s;
     }
 
     .atalhos a:hover {
       background: #eaf2ff;
       border-color: var(--azul);
-      color: var(--azul-escuro);
     }
 
-    /* CONTEÚDO */
+    /* CATEGORIAS */
 
     .secao {
-      padding: 35px 0;
+      padding: 34px 0;
     }
 
     .titulo-secao {
-      margin-bottom: 8px;
       font-size: 26px;
-      letter-spacing: -0.4px;
+      margin-bottom: 6px;
     }
 
     .descricao-secao {
       color: var(--cinza);
-      margin-bottom: 23px;
       font-size: 14px;
+      margin-bottom: 21px;
     }
-
-    /* CARDS */
 
     .grade {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 17px;
     }
 
     .card {
@@ -303,10 +308,10 @@
       background: white;
       border: 1px solid var(--borda);
       border-radius: 12px;
-      padding: 23px;
-      min-height: 225px;
+      padding: 21px;
+      min-height: 220px;
       box-shadow: 0 2px 6px #00000006;
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform .2s, box-shadow .2s;
     }
 
     .card:hover {
@@ -316,63 +321,68 @@
 
     .card-icone {
       display: flex;
-      justify-content: center;
       align-items: center;
-      width: 53px;
-      height: 53px;
+      justify-content: center;
+      width: 51px;
+      height: 51px;
       background: #fff5a8;
       border-radius: 12px;
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 27px;
+      margin-bottom: 13px;
     }
 
     .card h3 {
       font-size: 19px;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     .card p {
       color: var(--cinza);
       font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 17px;
     }
 
     .botao-card {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
+      gap: 8px;
       margin-top: auto;
-      padding: 11px 14px;
+      padding: 10px 13px;
       background: var(--azul);
       color: white;
       border-radius: 7px;
       font-size: 13px;
       font-weight: 800;
-      transition: 0.2s;
     }
 
-    .botao-card:hover {
-      background: var(--azul-escuro);
+    .mensagem-vazia {
+      display: none;
+      padding: 24px;
+      margin: 14px 0;
+      background: white;
+      border-radius: 10px;
+      text-align: center;
+      color: var(--cinza);
     }
 
-    /* FAIXA DE CHAMADA */
+    /* FAIXA DE OFERTAS */
 
     .faixa {
       background: #eaf2ff;
       border: 1px solid #d7e6ff;
       border-radius: 14px;
-      padding: 27px;
+      padding: 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     .faixa h2 {
       font-size: 22px;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .faixa p {
@@ -380,19 +390,19 @@
       font-size: 14px;
     }
 
-    /* GUIAS */
+    /* DICAS */
 
     .guia {
       background: white;
       border: 1px solid var(--borda);
       border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 12px;
+      padding: 18px;
+      margin-bottom: 11px;
     }
 
     .guia h3 {
       font-size: 17px;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
 
     .guia p {
@@ -400,23 +410,24 @@
       color: var(--cinza);
     }
 
-    .mensagem-vazia {
-      display: none;
-      padding: 25px;
-      margin: 15px 0;
+    /* TRANSPARÊNCIA E RODAPÉ */
+
+    .transparencia {
       background: white;
-      border-radius: 10px;
-      text-align: center;
-      color: var(--cinza);
+      border-top: 1px solid var(--borda);
+      padding: 18px 0;
     }
 
-    /* RODAPÉ */
+    .transparencia p {
+      font-size: 13px;
+      color: #555;
+    }
 
     footer {
       background: #252525;
       color: white;
-      padding: 30px 0;
-      margin-top: 20px;
+      padding: 28px 0;
+      margin-top: 10px;
     }
 
     .rodape-conteudo {
@@ -426,15 +437,16 @@
       flex-wrap: wrap;
     }
 
-    footer h3 {
-      margin-bottom: 9px;
+    footer h2 {
+      font-size: 19px;
+      margin-bottom: 8px;
     }
 
     footer p {
       color: #d0d0d0;
       font-size: 13px;
-      max-width: 540px;
-      margin-bottom: 9px;
+      max-width: 600px;
+      margin-bottom: 8px;
     }
 
     .rodape-links {
@@ -450,17 +462,15 @@
 
     .copyright {
       border-top: 1px solid #444;
-      padding-top: 17px;
-      margin-top: 22px;
+      padding-top: 15px;
+      margin-top: 20px;
       color: #bbb;
       font-size: 12px;
     }
 
-    /* CELULAR */
-
     @media (max-width: 800px) {
       .cabecalho {
-        gap: 13px;
+        gap: 12px;
       }
 
       .logo {
@@ -487,12 +497,8 @@
         padding: 16px;
       }
 
-      .card h3 {
-        font-size: 17px;
-      }
-
       .hero {
-        padding: 36px 0 28px;
+        padding: 34px 0 27px;
       }
     }
 
@@ -509,14 +515,6 @@
         font-size: 23px;
       }
 
-      .faixa {
-        padding: 20px;
-      }
-
-      .faixa .botao-card {
-        width: 100%;
-      }
-
       .hero h1 {
         font-size: 32px;
       }
@@ -527,7 +525,15 @@
 
       .atalhos a {
         font-size: 12px;
-        padding: 8px 11px;
+        padding: 8px 10px;
+      }
+
+      .faixa {
+        padding: 19px;
+      }
+
+      .faixa .botao-card {
+        width: 100%;
       }
     }
   </style>
@@ -535,11 +541,10 @@
 
 <body>
 
-  <!-- CABEÇALHO -->
   <header>
     <div class="container cabecalho">
 
-      <a class="logo" href="#" aria-label="Página inicial da Vitrine de Ofertas">
+      <a class="logo" href="/" aria-label="Página inicial">
         Vitrine <span>de Ofertas</span>
       </a>
 
@@ -555,15 +560,16 @@
 
       <a
         class="botao-topo"
-        href="#ofertas"
+        href="https://meli.la/1rb5n4b"
+        target="_blank"
+        rel="nofollow sponsored noopener noreferrer"
       >
-        🛒 Conferir ofertas
+        🛒 Ver ofertas ↗
       </a>
 
     </div>
   </header>
 
-  <!-- MENU DE CATEGORIAS -->
   <nav aria-label="Categorias principais">
     <div class="container menu">
       <a href="#casa">Casa e decoração</a>
@@ -577,7 +583,6 @@
 
   <main>
 
-    <!-- DESTAQUE PRINCIPAL -->
     <section class="hero">
       <div class="container hero-conteudo">
 
@@ -589,15 +594,12 @@
           Casa, tecnologia, cozinha e quintal em um só lugar.
         </p>
 
-        <!-- IMPORTANTE:
-             Substitua o endereço abaixo pelo link da sua lista
-             principal de produtos do Mercado Livre.
-        -->
+        <!-- BOTÃO PRINCIPAL: LINK INFORMADO PELA PROPRIETÁRIA -->
         <a
           class="botao-principal"
-          href="COLE_AQUI_O_LINK_DA_SUA_LISTA"
+          href="https://meli.la/1rb5n4b"
           target="_blank"
-          rel="nofollow sponsored noopener"
+          rel="nofollow sponsored noopener noreferrer"
         >
           <span class="icone-carrinho" aria-hidden="true">🛒</span>
           <span>VER TODAS AS OFERTAS</span>
@@ -605,10 +607,10 @@
         </a>
 
         <span class="texto-apoio">
-          Confira os produtos no Mercado Livre
+          Confira os produtos e as condições no Mercado Livre.
         </span>
 
-        <div class="atalhos" aria-label="Atalhos de categorias">
+        <div class="atalhos">
           <a href="#casa">🏠 Casa</a>
           <a href="#cozinha">🍳 Cozinha</a>
           <a href="#tecnologia">📱 Tecnologia</a>
@@ -620,236 +622,131 @@
       </div>
     </section>
 
-    <!-- CATEGORIAS E OFERTAS -->
     <section class="secao" id="ofertas">
       <div class="container">
 
-        <h2 class="titulo-secao">Explore as ofertas</h2>
+        <h2 class="titulo-secao">Explore por categoria</h2>
 
         <p class="descricao-secao">
-          Escolha uma categoria e confira os produtos disponíveis.
+          Escolha uma categoria e confira as ofertas disponíveis.
         </p>
 
         <div class="grade" id="gradeProdutos">
 
-          <!-- CASA -->
           <article class="card" id="casa" data-termos="casa decoração organização móveis quarto sala">
-            <div class="card-icone" aria-hidden="true">🏠</div>
+            <div class="card-icone">🏠</div>
             <h3>Casa e decoração</h3>
-            <p>
-              Ideias para organizar, decorar e deixar sua casa mais prática.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Produtos para organizar, decorar e deixar sua casa mais prática.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- COZINHA -->
           <article class="card" id="cozinha" data-termos="cozinha panelas utensílios eletrodomésticos culinária">
-            <div class="card-icone" aria-hidden="true">🍳</div>
+            <div class="card-icone">🍳</div>
             <h3>Cozinha</h3>
-            <p>
-              Utensílios e produtos para facilitar o preparo das refeições.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Utensílios e produtos para facilitar o preparo das refeições.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- TECNOLOGIA -->
           <article class="card" id="tecnologia" data-termos="celular tecnologia informática computador notebook fone carregador">
-            <div class="card-icone" aria-hidden="true">📱</div>
+            <div class="card-icone">📱</div>
             <h3>Celulares e tecnologia</h3>
-            <p>
-              Acessórios, informática e produtos para o dia a dia digital.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Acessórios e informática para o dia a dia digital.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- LIMPEZA -->
-          <article class="card" id="limpeza" data-termos="limpeza casa lavanderia organização vassoura aspirador">
-            <div class="card-icone" aria-hidden="true">🧹</div>
+          <article class="card" id="limpeza" data-termos="limpeza lavanderia organização vassoura aspirador">
+            <div class="card-icone">🧹</div>
             <h3>Limpeza e organização</h3>
-            <p>
-              Produtos para manter os ambientes limpos e organizados.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Produtos para manter os ambientes limpos e organizados.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- FERRAMENTAS -->
           <article class="card" id="ferramentas" data-termos="ferramentas construção manutenção oficina furadeira parafusadeira">
-            <div class="card-icone" aria-hidden="true">🛠️</div>
+            <div class="card-icone">🛠️</div>
             <h3>Ferramentas</h3>
-            <p>
-              Ferramentas e acessórios para pequenos reparos e projetos.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Itens para pequenos reparos, manutenção e projetos.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- CAMPO E QUINTAL -->
           <article class="card" id="campo" data-termos="campo quintal roça jardim agricultura horta plantas irrigação animais">
-            <div class="card-icone" aria-hidden="true">🌱</div>
+            <div class="card-icone">🌱</div>
             <h3>Campo e quintal</h3>
-            <p>
-              Itens para horta, jardim, quintal, roça e cuidado com animais.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Itens para horta, jardim, roça e cuidado com animais.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- ELETRÔNICOS -->
           <article class="card" data-termos="eletrônicos televisão tv som caixas de som acessórios">
-            <div class="card-icone" aria-hidden="true">🎧</div>
+            <div class="card-icone">🎧</div>
             <h3>Eletrônicos</h3>
-            <p>
-              Acessórios e equipamentos para casa, trabalho e lazer.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Acessórios e equipamentos para casa, trabalho e lazer.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- ROUPAS -->
           <article class="card" data-termos="roupas moda calçados tênis bolsas acessórios">
-            <div class="card-icone" aria-hidden="true">👕</div>
+            <div class="card-icone">👕</div>
             <h3>Roupas e acessórios</h3>
-            <p>
-              Peças e acessórios para diferentes estilos e necessidades.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Peças e acessórios para diferentes estilos e necessidades.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
-          <!-- UTILIDADES -->
           <article class="card" data-termos="utilidades presentes itens úteis acessórios dia a dia">
-            <div class="card-icone" aria-hidden="true">✨</div>
+            <div class="card-icone">✨</div>
             <h3>Utilidades do dia a dia</h3>
-            <p>
-              Produtos úteis para simplificar tarefas e a rotina.
-            </p>
-            <a
-              class="botao-card"
-              href="https://meli.la/1rb5n4b"
-              target="_blank"
-              rel="nofollow sponsored noopener"
-            >
-              🛒 Ver produtos ↗
-            </a>
+            <p>Produtos úteis para simplificar tarefas da rotina.</p>
+            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
           </article>
 
         </div>
 
-        <div class="mensagem-vazia" id="mensagemVazia">
+        <div class="mensagem-vazia" id="mensagemVazia" role="status">
           Não encontramos essa categoria. Tente pesquisar outro termo.
         </div>
 
       </div>
     </section>
 
-    <!-- CHAMADA PARA A LISTA PRINCIPAL -->
     <section class="secao">
       <div class="container">
         <div class="faixa">
-
           <div>
-            <h2>Já sabe o que quer encontrar?</h2>
-            <p>
-              Acesse a lista principal e explore os produtos disponíveis.
-            </p>
+            <h2>Encontre sua próxima compra</h2>
+            <p>Confira os produtos e verifique preço, frete e disponibilidade.</p>
           </div>
 
           <a
             class="botao-card"
-            href="COLE_AQUI_O_LINK_DA_SUA_LISTA"
+            href="https://meli.la/1rb5n4b"
             target="_blank"
-            rel="nofollow sponsored noopener"
+            rel="nofollow sponsored noopener noreferrer"
           >
-            🛒 Abrir lista de ofertas ↗
+            🛒 Abrir ofertas ↗
           </a>
-
         </div>
       </div>
     </section>
 
-    <!-- GUIAS -->
-    <section class="secao" id="guias">
+    <section class="secao" id="dicas">
       <div class="container">
 
         <h2 class="titulo-secao">Dicas para comprar melhor</h2>
 
         <p class="descricao-secao">
-          Algumas dicas rápidas antes de finalizar sua compra.
+          Confira alguns cuidados antes de finalizar uma compra online.
         </p>
 
         <article class="guia" data-termos="preço comparar economia ofertas">
-          <h3>Compare os preços</h3>
-          <p>
-            Antes de comprar, confira o preço final, o frete e as condições
-            oferecidas para o seu endereço.
-          </p>
+          <h3>Compare o preço final</h3>
+          <p>Confira o preço, o frete e as condições de pagamento para o seu endereço.</p>
         </article>
 
         <article class="guia" data-termos="avaliações reputação vendedor segurança">
-          <h3>Confira as avaliações</h3>
-          <p>
-            Leia as avaliações dos compradores, observe a reputação do
-            vendedor e confira a descrição do produto.
-          </p>
+          <h3>Leia as avaliações</h3>
+          <p>Observe as avaliações dos compradores, a reputação do vendedor e a descrição do produto.</p>
         </article>
 
         <article class="guia" data-termos="frete entrega prazo compra">
-          <h3>Observe o prazo de entrega</h3>
-          <p>
-            Verifique o prazo e o valor do frete antes de concluir o pedido.
-          </p>
+          <h3>Confira a entrega</h3>
+          <p>O prazo, o frete e a disponibilidade podem variar conforme o produto e o endereço.</p>
         </article>
 
       </div>
@@ -857,113 +754,123 @@
 
   </main>
 
-  <!-- RODAPÉ -->
+  <section class="transparencia">
+    <div class="container">
+      <p>
+        <strong>Transparência:</strong> a Vitrine de Ofertas pode receber comissão
+        por compras qualificadas realizadas por links de afiliado, sem custo
+        adicional para o comprador. Preços, disponibilidade e condições devem
+        ser confirmados no site de destino.
+      </p>
+    </div>
+  </section>
+
   <footer>
     <div class="container">
 
       <div class="rodape-conteudo">
-
         <div>
-          <h3>Vitrine de Ofertas</h3>
+          <h2>Vitrine de Ofertas</h2>
           <p>
-            Um espaço para descobrir produtos e encontrar ofertas para
-            diferentes necessidades do dia a dia.
+            Um site independente para ajudar você a descobrir produtos
+            para diferentes necessidades do dia a dia.
+          </p>
+          <p>
+            A Vitrine de Ofertas não é o site oficial do Mercado Livre.
           </p>
         </div>
 
         <div class="rodape-links">
-          <a href="#ofertas">Explorar produtos</a>
+          <a href="#ofertas">Explorar ofertas</a>
           <a href="#casa">Casa e decoração</a>
           <a href="#tecnologia">Tecnologia</a>
           <a href="#campo">Campo e quintal</a>
-          <a href="#guias">Dicas de compra</a>
+          <a href="#dicas">Dicas de compra</a>
         </div>
-
       </div>
 
       <div class="copyright">
-        <p>
-          Este site pode participar do Programa de Afiliados do Mercado Livre.
-          Podemos receber uma comissão por compras qualificadas realizadas
-          por meio de links de afiliado, sem custo adicional para o comprador.
-        </p>
-
-        <p>
-          A Vitrine de Ofertas é um site independente e não representa
-          oficialmente o Mercado Livre. Preços, disponibilidade, frete e
-          condições devem ser confirmados na página do produto.
-        </p>
-
-        <p>
-          © <span id="anoAtual"></span> Vitrine de Ofertas. Todos os direitos reservados.
-        </p>
+        © <span id="anoAtual"></span> Vitrine de Ofertas.
       </div>
 
     </div>
   </footer>
 
   <script>
-    // Atualiza automaticamente o ano do rodapé.
     document.getElementById("anoAtual").textContent =
       new Date().getFullYear();
 
-    // Pesquisa por nome de categoria, descrição e palavras-chave.
     const campoBusca = document.getElementById("campoBusca");
     const formBusca = document.getElementById("formBusca");
-    const cards = document.querySelectorAll(".card");
-    const guias = document.querySelectorAll(".guia");
+    const cards = [...document.querySelectorAll(".card")];
+    const guias = [...document.querySelectorAll(".guia")];
     const mensagemVazia = document.getElementById("mensagemVazia");
 
-    function normalizarTexto(texto) {
+    function normalizar(texto) {
       return texto
-        .toLowerCase()
+        .toLocaleLowerCase("pt-BR")
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
     }
 
-    function pesquisar() {
-      const termo = normalizarTexto(campoBusca.value);
+    function pesquisar(termo) {
+      const busca = normalizar(termo);
       let encontrados = 0;
 
       cards.forEach(function(card) {
-        const textoCard = normalizarTexto(
+        const texto = normalizar(
           card.innerText + " " + (card.dataset.termos || "")
         );
 
-        const corresponde = textoCard.includes(termo);
+        const corresponde = !busca || texto.includes(busca);
+        card.hidden = !corresponde;
 
-        card.style.display = corresponde ? "flex" : "none";
-
-        if (corresponde) {
-          encontrados++;
-        }
+        if (corresponde) encontrados++;
       });
 
       guias.forEach(function(guia) {
-        const textoGuia = normalizarTexto(
+        const texto = normalizar(
           guia.innerText + " " + (guia.dataset.termos || "")
         );
 
-        guia.style.display = textoGuia.includes(termo)
-          ? "block"
-          : "none";
+        guia.hidden = !!busca && !texto.includes(busca);
       });
 
       mensagemVazia.style.display =
         encontrados === 0 ? "block" : "none";
     }
 
-    campoBusca.addEventListener("input", pesquisar);
-
     formBusca.addEventListener("submit", function(evento) {
       evento.preventDefault();
-      pesquisar();
+      pesquisar(campoBusca.value);
 
       document.getElementById("ofertas").scrollIntoView({
         behavior: "smooth"
       });
+
+      const url = new URL(window.location.href);
+
+      if (campoBusca.value.trim()) {
+        url.searchParams.set("q", campoBusca.value.trim());
+      } else {
+        url.searchParams.delete("q");
+      }
+
+      history.replaceState({}, "", url);
     });
+
+    campoBusca.addEventListener("input", function() {
+      pesquisar(campoBusca.value);
+    });
+
+    const buscaInicial =
+      new URLSearchParams(window.location.search).get("q");
+
+    if (buscaInicial) {
+      campoBusca.value = buscaInicial;
+      pesquisar(buscaInicial);
+    }
   </script>
 
 </body>
