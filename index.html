@@ -2,876 +2,1089 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vitrine de Ofertas | Achados para Casa, Tecnologia e Quintal</title>
+<title>Vitrine de Ofertas | Achadinhos, Produtos Baratos e Ofertas Online</title>
 
-  <meta name="description" content="Encontre ofertas e produtos para casa, cozinha, celulares, tecnologia, limpeza, ferramentas, campo e quintal na Vitrine de Ofertas.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <meta name="theme-color" content="#ffe600">
+<meta name="description" content="Encontre ofertas e produtos baratos na Vitrine de Ofertas! Notebooks, celulares, eletrodomésticos, brinquedos, material escolar, pesca, ferramentas, produtos rurais e muito mais.">
+<meta name="keywords" content="Vitrine de Ofertas, ofertas Mercado Livre, achadinhos, produtos baratos, ofertas online, notebooks baratos, eletrodomésticos baratos, enfeites de Natal, artigos de pescaria, artigos de caça, carabinas, pintura de casa, brinquedos infantis, produtos para revenda, material escolar barato, TV até 1000 reais, celular até 1000 reais, caminhada, musculação, produtos rurais, ferramentas para roça, produtos para casa, dicas de compra">
+<meta name="author" content="Vitrine de Ofertas">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffe600">
 
-  <link rel="canonical" href="https://marquesdvoferta.github.io/">
+<link rel="canonical" href="https://marquesdvoferta.github.io/">
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="Vitrine de Ofertas">
-  <meta property="og:title" content="Vitrine de Ofertas">
-  <meta property="og:description" content="Achados para facilitar seu dia. Explore produtos e ofertas.">
-  <meta property="og:url" content="https://marquesdvoferta.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vitrine de Ofertas | Descubra seus próximos achados">
+<meta property="og:description" content="Ofertas, produtos baratos e achadinhos para casa, tecnologia, campo, lazer e muito mais.">
+<meta property="og:url" content="https://marquesdvoferta.github.io/">
 
-  <meta name="google-site-verification" content="zKf0s4z3G5lWo8_UDQFrB1APhoy98aSeNJ8srN97w3k">
+<style>
+:root {
+    --amarelo: #ffe600;
+    --azul: #3483fa;
+    --azul-escuro: #205fbd;
+    --texto: #292929;
+    --cinza: #666;
+    --fundo: #f4f6f8;
+    --branco: #fff;
+    --borda: #e8e8e8;
+}
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Vitrine de Ofertas",
-    "url": "https://marquesdvoferta.github.io/",
-    "inLanguage": "pt-BR",
-    "description": "Site independente de ofertas e produtos para o dia a dia."
-  }
-  </script>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <style>
-    :root {
-      --amarelo: #ffe600;
-      --azul: #3483fa;
-      --azul-escuro: #1756a9;
-      --fundo: #f5f5f5;
-      --texto: #292929;
-      --cinza: #666;
-      --borda: #e5e5e5;
-      --branco: #fff;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: var(--amarelo);
+    padding: 15px 5%;
+    box-shadow: 0 2px 8px #00000012;
+}
+
+.topo {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 25px;
+    font-weight: 900;
+    color: #252525;
+}
+
+.logo-icone {
+    width: 48px;
+    height: 43px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    box-shadow: 0 2px 5px #00000020;
+}
+
+.logo span {
+    color: var(--azul-escuro);
+}
+
+.aviso-topo {
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+}
+
+nav {
+    background: white;
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu {
+    max-width: 1200px;
+    margin: auto;
+    padding: 13px 5%;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.menu a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+.menu a:hover {
+    color: var(--azul);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 5%;
+}
+
+.banner {
+    background: linear-gradient(120deg, #fff3a8, #ffe600);
+    border-radius: 18px;
+    padding: 45px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    overflow: hidden;
+}
+
+.banner h1 {
+    font-size: clamp(28px, 4vw, 43px);
+    line-height: 1.15;
+    max-width: 650px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 17px;
+    max-width: 620px;
+    color: #454545;
+    margin-bottom: 22px;
+}
+
+.banner-icone {
+    font-size: 100px;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--azul);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 9px;
+    font-weight: bold;
+    transition: .2s;
+    text-align: center;
+    border: none;
+}
+
+.botao:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-2px);
+}
+
+.botao-grande {
+    display: block;
+    width: 100%;
+    margin: 25px 0;
+    padding: 26px 20px;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #1766d8, #3483fa);
+    color: white;
+    text-align: center;
+    box-shadow: 0 7px 20px #3483fa35;
+    transition: .2s;
+}
+
+.botao-grande:hover {
+    transform: translateY(-3px);
+    background: #175fc7;
+}
+
+.botao-grande strong {
+    display: block;
+    font-size: clamp(20px, 4vw, 29px);
+}
+
+.botao-grande span {
+    display: block;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.identificacao {
+    font-size: 12px;
+    color: #555;
+    text-align: center;
+    margin: 14px auto;
+    max-width: 900px;
+}
+
+.busca {
+    display: flex;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.busca input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 9px;
+    font-size: 16px;
+    outline-color: var(--azul);
+}
+
+.busca button {
+    border: none;
+    background: var(--azul);
+    color: white;
+    padding: 0 24px;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secao {
+    margin: 38px 0;
+}
+
+.secao h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    color: var(--cinza);
+    margin-bottom: 20px;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.categoria {
+    background: white;
+    padding: 22px 12px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--borda);
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 145px;
+}
+
+.categoria:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 18px #00000012;
+    border-color: var(--azul);
+}
+
+.emoji {
+    font-size: 35px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.categoria strong {
+    font-size: 14px;
+    display: block;
+}
+
+.categoria small {
+    color: #777;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.produto {
+    background: white;
+    border-radius: 13px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+}
+
+.produto-imagem {
+    height: 145px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f4f8;
+    font-size: 65px;
+}
+
+.produto-info {
+    padding: 18px;
+    flex: 1;
+}
+
+.produto-info h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.produto-info p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.produto .botao {
+    display: block;
+    margin-top: auto;
+    border-radius: 0;
+}
+
+.selo {
+    display: inline-block;
+    background: #e8f2ff;
+    color: #1766d8;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 9px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.dicas {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--borda);
+}
+
+.dicas h3 {
+    margin: 20px 0 7px;
+}
+
+.dicas p {
+    color: #555;
+    font-size: 14px;
+}
+
+.dicas ul {
+    padding-left: 22px;
+    color: #555;
+    font-size: 14px;
+}
+
+.dicas li {
+    margin: 7px 0;
+}
+
+.chamada {
+    background: #e8f2ff;
+    border-left: 5px solid var(--azul);
+    padding: 22px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.resultado-busca {
+    color: #555;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.sem-resultado {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+footer {
+    background: #20232a;
+    color: white;
+    padding: 35px 5%;
+    margin-top: 40px;
+}
+
+.rodape {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 25px;
+}
+
+footer h3 {
+    margin-bottom: 12px;
+}
+
+footer p, footer a {
+    font-size: 13px;
+    color: #ccc;
+}
+
+footer a {
+    display: block;
+    margin: 6px 0;
+}
+
+footer a:hover {
+    color: var(--amarelo);
+}
+
+.rodape-final {
+    border-top: 1px solid #444;
+    margin-top: 25px;
+    padding-top: 18px;
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.oculto {
+    display: none !important;
+}
+
+@media(max-width: 800px) {
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+    .banner-icone {
+        font-size: 65px;
+    }
+}
+
+@media(max-width: 520px) {
+    .banner {
+        padding: 30px 20px;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--fundo);
-      color: var(--texto);
-      line-height: 1.5;
+    .banner-icone {
+        display: none;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .produtos {
+        grid-template-columns: 1fr;
     }
 
-    button,
-    input {
-      font: inherit;
-    }
-
-    a:focus-visible,
-    button:focus-visible,
-    input:focus-visible {
-      outline: 3px solid #111;
-      outline-offset: 3px;
-    }
-
-    .container {
-      width: min(1150px, 92%);
-      margin: 0 auto;
-    }
-
-    /* CABEÇALHO */
-
-    header {
-      background: var(--amarelo);
-      padding: 16px 0;
-    }
-
-    .cabecalho {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
+    .rodape {
+        grid-template-columns: 1fr;
     }
 
     .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -1px;
-      color: #222;
+        font-size: 21px;
     }
 
-    .logo span {
-      color: var(--azul-escuro);
-    }
-
-    .busca {
-      flex: 1;
-      max-width: 510px;
-      display: flex;
-      background: var(--branco);
-      border: 1px solid #ddd;
-      border-radius: 7px;
-      overflow: hidden;
-    }
-
-    .busca input {
-      width: 100%;
-      min-width: 0;
-      padding: 13px 15px;
-      border: none;
-      outline: none;
+    .aviso-topo {
+        width: 100%;
     }
 
     .busca button {
-      width: 52px;
-      flex-shrink: 0;
-      border: none;
-      border-left: 1px solid #eee;
-      background: white;
-      cursor: pointer;
-      font-size: 24px;
+        padding: 0 15px;
     }
 
-    .botao-topo {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 16px;
-      background: var(--azul);
-      color: white;
-      border-radius: 8px;
-      font-weight: 800;
-      font-size: 14px;
+    .categoria {
+        min-height: 135px;
     }
-
-    .botao-topo:hover,
-    .botao-principal:hover,
-    .botao-card:hover {
-      background: var(--azul-escuro);
-    }
-
-    /* MENU */
-
-    nav {
-      background: white;
-      border-bottom: 1px solid var(--borda);
-    }
-
-    .menu {
-      display: flex;
-      gap: 24px;
-      overflow-x: auto;
-      white-space: nowrap;
-      padding: 13px 0;
-    }
-
-    .menu a {
-      font-size: 14px;
-      color: #444;
-    }
-
-    .menu a:hover {
-      color: var(--azul-escuro);
-    }
-
-    /* DESTAQUE PRINCIPAL */
-
-    .hero {
-      background: white;
-      padding: 42px 0 31px;
-      text-align: center;
-    }
-
-    .hero-conteudo {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .etiqueta {
-      display: inline-block;
-      background: #fff5a8;
-      color: #514900;
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .5px;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: clamp(31px, 5vw, 46px);
-      line-height: 1.12;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: var(--cinza);
-      font-size: 16px;
-      margin-bottom: 23px;
-    }
-
-    /* BOTÃO PRINCIPAL DO MERCADO LIVRE */
-
-    .botao-principal {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      max-width: 410px;
-      min-height: 66px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      background: var(--azul);
-      color: white;
-      font-size: 16px;
-      font-weight: 800;
-      border-radius: 10px;
-      box-shadow: 0 5px 12px #3483fa40;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .botao-principal:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px #3483fa50;
-    }
-
-    .icone-carrinho {
-      font-size: 26px;
-    }
-
-    .texto-apoio {
-      display: block;
-      margin-top: 9px;
-      color: #777;
-      font-size: 12px;
-    }
-
-    .atalhos {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 25px;
-    }
-
-    .atalhos a {
-      background: #f5f5f5;
-      border: 1px solid #e7e7e7;
-      border-radius: 30px;
-      padding: 8px 13px;
-      font-size: 13px;
-    }
-
-    .atalhos a:hover {
-      background: #eaf2ff;
-      border-color: var(--azul);
-    }
-
-    /* CATEGORIAS */
-
-    .secao {
-      padding: 34px 0;
-    }
-
-    .titulo-secao {
-      font-size: 26px;
-      margin-bottom: 6px;
-    }
-
-    .descricao-secao {
-      color: var(--cinza);
-      font-size: 14px;
-      margin-bottom: 21px;
-    }
-
-    .grade {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      background: white;
-      border: 1px solid var(--borda);
-      border-radius: 12px;
-      padding: 21px;
-      min-height: 220px;
-      box-shadow: 0 2px 6px #00000006;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 7px 18px #0000000d;
-    }
-
-    .card-icone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 51px;
-      height: 51px;
-      background: #fff5a8;
-      border-radius: 12px;
-      font-size: 27px;
-      margin-bottom: 13px;
-    }
-
-    .card h3 {
-      font-size: 19px;
-      margin-bottom: 7px;
-    }
-
-    .card p {
-      color: var(--cinza);
-      font-size: 14px;
-      margin-bottom: 17px;
-    }
-
-    .botao-card {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: auto;
-      padding: 10px 13px;
-      background: var(--azul);
-      color: white;
-      border-radius: 7px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .mensagem-vazia {
-      display: none;
-      padding: 24px;
-      margin: 14px 0;
-      background: white;
-      border-radius: 10px;
-      text-align: center;
-      color: var(--cinza);
-    }
-
-    /* FAIXA DE OFERTAS */
-
-    .faixa {
-      background: #eaf2ff;
-      border: 1px solid #d7e6ff;
-      border-radius: 14px;
-      padding: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    .faixa h2 {
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .faixa p {
-      color: #555;
-      font-size: 14px;
-    }
-
-    /* DICAS */
-
-    .guia {
-      background: white;
-      border: 1px solid var(--borda);
-      border-radius: 10px;
-      padding: 18px;
-      margin-bottom: 11px;
-    }
-
-    .guia h3 {
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .guia p {
-      font-size: 14px;
-      color: var(--cinza);
-    }
-
-    /* TRANSPARÊNCIA E RODAPÉ */
-
-    .transparencia {
-      background: white;
-      border-top: 1px solid var(--borda);
-      padding: 18px 0;
-    }
-
-    .transparencia p {
-      font-size: 13px;
-      color: #555;
-    }
-
-    footer {
-      background: #252525;
-      color: white;
-      padding: 28px 0;
-      margin-top: 10px;
-    }
-
-    .rodape-conteudo {
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    footer h2 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      color: #d0d0d0;
-      font-size: 13px;
-      max-width: 600px;
-      margin-bottom: 8px;
-    }
-
-    .rodape-links {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .rodape-links a:hover {
-      text-decoration: underline;
-    }
-
-    .copyright {
-      border-top: 1px solid #444;
-      padding-top: 15px;
-      margin-top: 20px;
-      color: #bbb;
-      font-size: 12px;
-    }
-
-    @media (max-width: 800px) {
-      .cabecalho {
-        gap: 12px;
-      }
-
-      .logo {
-        font-size: 22px;
-      }
-
-      .busca {
-        order: 3;
-        flex-basis: 100%;
-        max-width: none;
-      }
-
-      .botao-topo {
-        font-size: 13px;
-        padding: 10px 12px;
-      }
-
-      .grade {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .card {
-        padding: 16px;
-      }
-
-      .hero {
-        padding: 34px 0 27px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .grade {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: auto;
-      }
-
-      .titulo-secao {
-        font-size: 23px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .atalhos {
-        gap: 7px;
-      }
-
-      .atalhos a {
-        font-size: 12px;
-        padding: 8px 10px;
-      }
-
-      .faixa {
-        padding: 19px;
-      }
-
-      .faixa .botao-card {
-        width: 100%;
-      }
-    }
-  </style>
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vitrine de Ofertas",
+  "url": "https://marquesdvoferta.github.io/",
+  "description": "Site independente de indicação de produtos, ofertas e achadinhos para diferentes categorias de compra.",
+  "inLanguage": "pt-BR"
+}
+</script>
 </head>
 
 <body>
 
-  <header>
-    <div class="container cabecalho">
-
-      <a class="logo" href="/" aria-label="Página inicial">
-        Vitrine <span>de Ofertas</span>
-      </a>
-
-      <form class="busca" id="formBusca" role="search">
-        <input
-          type="search"
-          id="campoBusca"
-          placeholder="O que você está procurando?"
-          aria-label="Pesquisar produtos e categorias"
-        >
-        <button type="submit" aria-label="Pesquisar">⌕</button>
-      </form>
-
-      <a
-        class="botao-topo"
-        href="https://meli.la/1rb5n4b"
-        target="_blank"
-        rel="nofollow sponsored noopener noreferrer"
-      >
-        🛒 Ver ofertas ↗
-      </a>
-
-    </div>
-  </header>
-
-  <nav aria-label="Categorias principais">
-    <div class="container menu">
-      <a href="#casa">Casa e decoração</a>
-      <a href="#cozinha">Cozinha</a>
-      <a href="#tecnologia">Celulares e tecnologia</a>
-      <a href="#limpeza">Limpeza</a>
-      <a href="#ferramentas">Ferramentas</a>
-      <a href="#campo">Campo e quintal</a>
-    </div>
-  </nav>
-
-  <main>
-
-    <section class="hero">
-      <div class="container hero-conteudo">
-
-        <span class="etiqueta">OFERTAS PARA O SEU DIA A DIA</span>
-
-        <h1>Encontre sua próxima oferta!</h1>
-
-        <p>
-          Casa, tecnologia, cozinha e quintal em um só lugar.
-        </p>
-
-        <!-- BOTÃO PRINCIPAL: LINK INFORMADO PELA PROPRIETÁRIA -->
-        <a
-          class="botao-principal"
-          href="https://meli.la/1rb5n4b"
-          target="_blank"
-          rel="nofollow sponsored noopener noreferrer"
-        >
-          <span class="icone-carrinho" aria-hidden="true">🛒</span>
-          <span>VER TODAS AS OFERTAS</span>
-          <span aria-hidden="true">↗</span>
+<header>
+    <div class="topo">
+        <a href="index.html" class="logo" aria-label="Vitrine de Ofertas - Página inicial">
+            <div class="logo-icone">🛒</div>
+            <div>Vitrine <span>de Ofertas</span></div>
         </a>
 
-        <span class="texto-apoio">
-          Confira os produtos e as condições no Mercado Livre.
-        </span>
-
-        <div class="atalhos">
-          <a href="#casa">🏠 Casa</a>
-          <a href="#cozinha">🍳 Cozinha</a>
-          <a href="#tecnologia">📱 Tecnologia</a>
-          <a href="#limpeza">🧹 Limpeza</a>
-          <a href="#ferramentas">🛠️ Ferramentas</a>
-          <a href="#campo">🌱 Campo e quintal</a>
+        <div class="aviso-topo">
+            SITE INDEPENDENTE DE AFILIADOS
         </div>
-
-      </div>
-    </section>
-
-    <section class="secao" id="ofertas">
-      <div class="container">
-
-        <h2 class="titulo-secao">Explore por categoria</h2>
-
-        <p class="descricao-secao">
-          Escolha uma categoria e confira as ofertas disponíveis.
-        </p>
-
-        <div class="grade" id="gradeProdutos">
-
-          <article class="card" id="casa" data-termos="casa decoração organização móveis quarto sala">
-            <div class="card-icone">🏠</div>
-            <h3>Casa e decoração</h3>
-            <p>Produtos para organizar, decorar e deixar sua casa mais prática.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" id="cozinha" data-termos="cozinha panelas utensílios eletrodomésticos culinária">
-            <div class="card-icone">🍳</div>
-            <h3>Cozinha</h3>
-            <p>Utensílios e produtos para facilitar o preparo das refeições.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" id="tecnologia" data-termos="celular tecnologia informática computador notebook fone carregador">
-            <div class="card-icone">📱</div>
-            <h3>Celulares e tecnologia</h3>
-            <p>Acessórios e informática para o dia a dia digital.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" id="limpeza" data-termos="limpeza lavanderia organização vassoura aspirador">
-            <div class="card-icone">🧹</div>
-            <h3>Limpeza e organização</h3>
-            <p>Produtos para manter os ambientes limpos e organizados.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" id="ferramentas" data-termos="ferramentas construção manutenção oficina furadeira parafusadeira">
-            <div class="card-icone">🛠️</div>
-            <h3>Ferramentas</h3>
-            <p>Itens para pequenos reparos, manutenção e projetos.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" id="campo" data-termos="campo quintal roça jardim agricultura horta plantas irrigação animais">
-            <div class="card-icone">🌱</div>
-            <h3>Campo e quintal</h3>
-            <p>Itens para horta, jardim, roça e cuidado com animais.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" data-termos="eletrônicos televisão tv som caixas de som acessórios">
-            <div class="card-icone">🎧</div>
-            <h3>Eletrônicos</h3>
-            <p>Acessórios e equipamentos para casa, trabalho e lazer.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" data-termos="roupas moda calçados tênis bolsas acessórios">
-            <div class="card-icone">👕</div>
-            <h3>Roupas e acessórios</h3>
-            <p>Peças e acessórios para diferentes estilos e necessidades.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-          <article class="card" data-termos="utilidades presentes itens úteis acessórios dia a dia">
-            <div class="card-icone">✨</div>
-            <h3>Utilidades do dia a dia</h3>
-            <p>Produtos úteis para simplificar tarefas da rotina.</p>
-            <a class="botao-card" href="https://meli.la/1rb5n4b" target="_blank" rel="nofollow sponsored noopener noreferrer">🛒 Ver ofertas ↗</a>
-          </article>
-
-        </div>
-
-        <div class="mensagem-vazia" id="mensagemVazia" role="status">
-          Não encontramos essa categoria. Tente pesquisar outro termo.
-        </div>
-
-      </div>
-    </section>
-
-    <section class="secao">
-      <div class="container">
-        <div class="faixa">
-          <div>
-            <h2>Encontre sua próxima compra</h2>
-            <p>Confira os produtos e verifique preço, frete e disponibilidade.</p>
-          </div>
-
-          <a
-            class="botao-card"
-            href="https://meli.la/1rb5n4b"
-            target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
-          >
-            🛒 Abrir ofertas ↗
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="secao" id="dicas">
-      <div class="container">
-
-        <h2 class="titulo-secao">Dicas para comprar melhor</h2>
-
-        <p class="descricao-secao">
-          Confira alguns cuidados antes de finalizar uma compra online.
-        </p>
-
-        <article class="guia" data-termos="preço comparar economia ofertas">
-          <h3>Compare o preço final</h3>
-          <p>Confira o preço, o frete e as condições de pagamento para o seu endereço.</p>
-        </article>
-
-        <article class="guia" data-termos="avaliações reputação vendedor segurança">
-          <h3>Leia as avaliações</h3>
-          <p>Observe as avaliações dos compradores, a reputação do vendedor e a descrição do produto.</p>
-        </article>
-
-        <article class="guia" data-termos="frete entrega prazo compra">
-          <h3>Confira a entrega</h3>
-          <p>O prazo, o frete e a disponibilidade podem variar conforme o produto e o endereço.</p>
-        </article>
-
-      </div>
-    </section>
-
-  </main>
-
-  <section class="transparencia">
-    <div class="container">
-      <p>
-        <strong>Transparência:</strong> a Vitrine de Ofertas pode receber comissão
-        por compras qualificadas realizadas por links de afiliado, sem custo
-        adicional para o comprador. Preços, disponibilidade e condições devem
-        ser confirmados no site de destino.
-      </p>
     </div>
-  </section>
+</header>
 
-  <footer>
-    <div class="container">
+<nav aria-label="Menu principal">
+    <div class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#destaques">Ofertas</a>
+        <a href="#dicas">Dicas de compra</a>
+        <a href="#sobre">Sobre nós</a>
+    </div>
+</nav>
 
-      <div class="rodape-conteudo">
+<main class="container">
+
+<section class="banner" id="inicio">
+    <div>
+        <h1>Seu próximo achado pode estar aqui!</h1>
+
+        <p>
+            Descubra produtos, ofertas e oportunidades de compra para
+            sua casa, tecnologia, lazer, estudos, atividades físicas,
+            campo e muito mais.
+        </p>
+
+        <a href="#categorias" class="botao">
+            🛍️ Explorar nossas categorias
+        </a>
+    </div>
+
+    <div class="banner-icone" aria-hidden="true">🛍️</div>
+</section>
+
+<p class="identificacao">
+    A Vitrine de Ofertas é um site independente de divulgação de produtos
+    e afiliados. Alguns links são links de afiliados e podemos receber
+    comissão por compras realizadas através deles, sem custo adicional
+    para você.
+</p>
+
+<a class="botao-grande"
+   href="https://meli.la/1rb5n4b"
+   target="_blank"
+   rel="nofollow sponsored noopener noreferrer">
+
+    <strong>🛒 Conheça produtos diversos e descubra novas possibilidades!</strong>
+
+    <span>
+        Quer explorar muito mais do que as categorias desta página?
+        Clique aqui e navegue por uma grande variedade de produtos no Mercado Livre.
+    </span>
+</a>
+
+<form class="busca" id="formBusca">
+    <input
+        type="search"
+        id="campoBusca"
+        placeholder="O que você está procurando? Ex.: notebook, brinquedo, pesca..."
+        aria-label="Pesquisar categorias"
+    >
+
+    <button type="submit">Buscar</button>
+</form>
+
+<p class="resultado-busca" id="resultadoBusca" aria-live="polite"></p>
+
+<section class="secao" id="categorias">
+
+    <h2>Explore nossas categorias</h2>
+
+    <p class="subtitulo">
+        Escolha o assunto que procura e confira as ofertas selecionadas.
+        Temos opções para casa, tecnologia, campo, lazer, estudos e muito mais.
+    </p>
+
+    <div class="categorias" id="listaCategorias">
+
+        <a class="categoria" data-palavras="notebook computador informática laptop tecnologia barato"
+           href="https://meli.la/1njpbSM" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">💻</span>
+            <strong>Notebooks Baratos</strong>
+            <small>Informática e tecnologia</small>
+        </a>
+
+        <a class="categoria" data-palavras="eletrodomésticos cozinha casa liquidificador cafeteira"
+           href="https://meli.la/2jKEBe1" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🍳</span>
+            <strong>Eletrodomésticos Baratos</strong>
+            <small>Produtos para sua casa</small>
+        </a>
+
+        <a class="categoria" data-palavras="natal decoração enfeites árvore luzes presentes"
+           href="https://meli.la/1vBQJKs" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🎄</span>
+            <strong>Enfeites de Natal</strong>
+            <small>Decoração natalina</small>
+        </a>
+
+        <a class="categoria" data-palavras="pesca pescaria vara molinete anzol acessórios"
+           href="https://meli.la/2eDHdYS" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🎣</span>
+            <strong>Pescaria</strong>
+            <small>Artigos e acessórios de pesca</small>
+        </a>
+
+        <a class="categoria" data-palavras="pintura casa tinta acabamento reforma construção"
+           href="https://meli.la/1uRP5Jz" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🖌️</span>
+            <strong>Pintura de Casa e Acabamentos</strong>
+            <small>Materiais para pintura e reforma</small>
+        </a>
+
+        <a class="categoria" data-palavras="caça carabina artigos equipamentos acessórios"
+           href="https://meli.la/2YBisqP" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🎯</span>
+            <strong>Artigos de Caça e Carabinas</strong>
+            <small>Confira anúncios e regras aplicáveis</small>
+        </a>
+
+        <a class="categoria" data-palavras="brinquedos crianças infantil bonecas jogos presentes"
+           href="https://meli.la/333DnWa" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🧸</span>
+            <strong>Brinquedos para Crianças</strong>
+            <small>Jogos, brinquedos e presentes</small>
+        </a>
+
+        <a class="categoria" data-palavras="revenda produtos negócio empreendedor comércio atacado"
+           href="https://meli.la/26pngPX" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">📦</span>
+            <strong>Produtos para Revenda</strong>
+            <small>Achados para pequenos negócios</small>
+        </a>
+
+        <a class="categoria" data-palavras="material escolar barato escola caderno mochila caneta"
+           href="https://meli.la/2bcp9T1" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🎒</span>
+            <strong>Material Escolar Barato</strong>
+            <small>Materiais para estudar</small>
+        </a>
+
+        <a class="categoria" data-palavras="tv televisão celular smartphone até mil reais eletrônicos"
+           href="https://meli.la/1cz7b71" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">📱</span>
+            <strong>TV e Celulares até R$ 1.000</strong>
+            <small>Eletrônicos e tecnologia</small>
+        </a>
+
+        <a class="categoria" data-palavras="caminhada musculação academia esporte exercício fitness"
+           href="https://meli.la/1oX9Gak" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🏃</span>
+            <strong>Caminhada e Musculação</strong>
+            <small>Produtos para atividade física</small>
+        </a>
+
+        <a class="categoria" data-palavras="rural roça campo quintal ferramentas agricultura fazenda"
+           href="https://meli.la/1V523ii" target="_blank"
+           rel="nofollow sponsored noopener noreferrer">
+            <span class="emoji">🌱</span>
+            <strong>Melhores Achados Rural</strong>
+            <small>Produtos para campo e quintal</small>
+        </a>
+
+    </div>
+
+    <div class="sem-resultado" id="semResultado">
+        Não encontramos essa categoria. Tente outra palavra ou explore
+        nossa vitrine de produtos diversos.
+        <br><br>
+        <a href="https://meli.la/1rb5n4b"
+           target="_blank"
+           rel="nofollow sponsored noopener noreferrer"
+           class="botao">
+            Conhecer produtos diversos
+        </a>
+    </div>
+
+</section>
+
+<section class="secao" id="destaques">
+
+    <h2>Achados em destaque</h2>
+
+    <p class="subtitulo">
+        Explore algumas das categorias mais procuradas pelos consumidores.
+    </p>
+
+    <div class="produtos">
+
+        <article class="produto">
+            <div class="produto-imagem">💻</div>
+            <div class="produto-info">
+                <span class="selo">Tecnologia</span>
+                <h3>Notebooks e computadores</h3>
+                <p>
+                    Pesquise notebooks para estudar, trabalhar,
+                    navegar na internet e realizar tarefas do dia a dia.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/1njpbSM"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+        <article class="produto">
+            <div class="produto-imagem">🧸</div>
+            <div class="produto-info">
+                <span class="selo">Infantil</span>
+                <h3>Brinquedos para crianças</h3>
+                <p>
+                    Explore brinquedos, jogos, presentes e opções
+                    para diferentes idades.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/333DnWa"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+        <article class="produto">
+            <div class="produto-imagem">🎣</div>
+            <div class="produto-info">
+                <span class="selo">Pesca</span>
+                <h3>Equipamentos de pescaria</h3>
+                <p>
+                    Confira opções de artigos, equipamentos
+                    e acessórios para pescadores.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/2eDHdYS"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+        <article class="produto">
+            <div class="produto-imagem">🍳</div>
+            <div class="produto-info">
+                <span class="selo">Casa</span>
+                <h3>Eletrodomésticos para sua casa</h3>
+                <p>
+                    Pesquise produtos para cozinha, limpeza
+                    e praticidade na rotina doméstica.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/2jKEBe1"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+        <article class="produto">
+            <div class="produto-imagem">🌾</div>
+            <div class="produto-info">
+                <span class="selo">Rural</span>
+                <h3>Achados para o campo e quintal</h3>
+                <p>
+                    Descubra ferramentas, acessórios e produtos
+                    úteis para atividades rurais e domésticas.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/1V523ii"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+        <article class="produto">
+            <div class="produto-imagem">📱</div>
+            <div class="produto-info">
+                <span class="selo">Eletrônicos</span>
+                <h3>TV e celulares até R$ 1.000</h3>
+                <p>
+                    Explore opções de televisores, celulares
+                    e acessórios de tecnologia.
+                </p>
+            </div>
+            <a class="botao" href="https://meli.la/1cz7b71"
+               target="_blank" rel="nofollow sponsored noopener noreferrer">
+                Ver oferta
+            </a>
+        </article>
+
+    </div>
+
+</section>
+
+<a class="botao-grande"
+   href="https://meli.la/1rb5n4b"
+   target="_blank"
+   rel="nofollow sponsored noopener noreferrer">
+
+    <strong>🔎 Não encontrou o que procura?</strong>
+
+    <span>
+        Explore uma grande variedade de produtos e descubra
+        outros achados na vitrine completa do Mercado Livre.
+    </span>
+</a>
+
+<section class="secao" id="dicas">
+
+    <h2>Dicas de compra: como escolher bons produtos</h2>
+
+    <p class="subtitulo">
+        Aprenda a pesquisar, comparar preços e fazer compras online
+        com mais informação e segurança.
+    </p>
+
+    <div class="dicas">
+
+        <h3>1. Compare preços antes de comprar</h3>
+        <p>
+            Antes de escolher um produto barato, compare o preço em
+            diferentes anúncios. Observe o valor do frete, o prazo
+            de entrega e as condições de pagamento. Uma oferta
+            aparentemente barata pode não ser a mais econômica
+            quando todos os custos são considerados.
+        </p>
+
+        <h3>2. Leia a descrição completa do produto</h3>
+        <p>
+            Verifique medidas, material, capacidade, voltagem,
+            compatibilidade, acessórios incluídos e especificações.
+            Em notebooks, observe memória RAM, armazenamento,
+            processador e tela. Em eletrodomésticos, confira potência,
+            capacidade e consumo de energia.
+        </p>
+
+        <h3>3. Analise as avaliações dos compradores</h3>
+        <p>
+            Leia avaliações positivas e negativas. Procure comentários
+            com fotos e informações sobre qualidade, funcionamento,
+            embalagem e entrega. Não considere somente a nota geral
+            do anúncio.
+        </p>
+
+        <h3>4. Confira o vendedor e a reputação</h3>
+        <p>
+            Observe a reputação do vendedor, as condições de envio,
+            as informações sobre devolução e as garantias disponíveis
+            na plataforma de compra.
+        </p>
+
+        <h3>5. Dicas para comprar notebooks baratos</h3>
+        <ul>
+            <li>Confira o processador e sua geração.</li>
+            <li>Compare memória RAM e armazenamento SSD.</li>
+            <li>Verifique se o equipamento atende ao seu uso.</li>
+            <li>Confira o sistema operacional e a garantia.</li>
+        </ul>
+
+        <h3>6. Dicas para comprar eletrodomésticos</h3>
+        <ul>
+            <li>Confira a voltagem correta para sua região.</li>
+            <li>Compare capacidade, potência e consumo de energia.</li>
+            <li>Observe dimensões e espaço disponível em casa.</li>
+            <li>Leia as condições de garantia.</li>
+        </ul>
+
+        <h3>7. Dicas para comprar ferramentas e produtos rurais</h3>
+        <ul>
+            <li>Verifique o material e a resistência.</li>
+            <li>Confira medidas, potência e compatibilidade.</li>
+            <li>Observe se os acessórios necessários estão incluídos.</li>
+            <li>Compare o custo-benefício para o trabalho que será realizado.</li>
+        </ul>
+
+        <h3>8. Dicas para comprar brinquedos infantis</h3>
+        <ul>
+            <li>Confira a indicação de idade.</li>
+            <li>Observe materiais e informações de segurança.</li>
+            <li>Verifique dimensões e peças pequenas.</li>
+            <li>Leia a descrição e as avaliações do produto.</li>
+        </ul>
+
+        <h3>9. Como escolher material escolar barato</h3>
+        <p>
+            Compare kits escolares, cadernos, mochilas, estojos,
+            lápis e canetas. Confira quantidade, tamanho, material
+            e qualidade antes de escolher o produto.
+        </p>
+
+        <h3>10. Como escolher produtos para revenda</h3>
+        <p>
+            Antes de comprar para revender, pesquise a procura pelo
+            produto, compare fornecedores, calcule frete e despesas
+            e avalie a margem de lucro. Não compre grandes quantidades
+            sem conhecer o mercado.
+        </p>
+
+        <div class="chamada">
+            <strong>Uma boa compra começa com uma boa pesquisa!</strong>
+            <p>
+                A Vitrine de Ofertas reúne categorias e sugestões para
+                ajudar você a descobrir produtos. Sempre confira as
+                informações atualizadas diretamente no anúncio antes
+                de comprar.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="secao" id="sobre">
+
+    <h2>Sobre a Vitrine de Ofertas</h2>
+
+    <div class="dicas">
+
+        <p>
+            A Vitrine de Ofertas é um site independente que organiza
+            sugestões de produtos e oportunidades de compra em
+            diferentes categorias. Nosso objetivo é facilitar a
+            descoberta de produtos para casa, tecnologia, lazer,
+            campo, estudos, atividades físicas e muito mais.
+        </p>
+
+        <h3>Como funcionam nossos links de afiliados?</h3>
+
+        <p>
+            Participamos de programas de afiliados. Isso significa
+            que alguns links publicados neste site podem gerar
+            comissão para a Vitrine de Ofertas quando uma compra
+            é realizada através deles. Essa comissão não representa
+            um custo adicional para o comprador.
+        </p>
+
+        <h3>Somos o Mercado Livre?</h3>
+
+        <p>
+            Não. A Vitrine de Ofertas é um site independente de
+            divulgação de produtos. Não somos o Mercado Livre,
+            não somos sua representante oficial e não realizamos
+            diretamente a venda, o pagamento, o envio ou o atendimento
+            dos produtos.
+        </p>
+
+        <p style="margin-top:12px">
+            Os anúncios, preços, estoque, condições de pagamento,
+            entrega e políticas de compra são definidos e atualizados
+            pela plataforma e pelos vendedores responsáveis.
+            Confira sempre os detalhes antes de finalizar sua compra.
+        </p>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+
+    <div class="rodape">
+
         <div>
-          <h2>Vitrine de Ofertas</h2>
-          <p>
-            Um site independente para ajudar você a descobrir produtos
-            para diferentes necessidades do dia a dia.
-          </p>
-          <p>
-            A Vitrine de Ofertas não é o site oficial do Mercado Livre.
-          </p>
+            <h3>🛒 Vitrine de Ofertas</h3>
+
+            <p>
+                Produtos, achados, sugestões e oportunidades
+                de compra para facilitar sua pesquisa na internet.
+            </p>
+
+            <p style="margin-top:12px">
+                Site independente de divulgação de ofertas e afiliados.
+            </p>
         </div>
 
-        <div class="rodape-links">
-          <a href="#ofertas">Explorar ofertas</a>
-          <a href="#casa">Casa e decoração</a>
-          <a href="#tecnologia">Tecnologia</a>
-          <a href="#campo">Campo e quintal</a>
-          <a href="#dicas">Dicas de compra</a>
+        <div>
+            <h3>Navegação</h3>
+            <a href="#inicio">Página inicial</a>
+            <a href="#categorias">Categorias</a>
+            <a href="#destaques">Ofertas</a>
+            <a href="#dicas">Dicas de compra</a>
         </div>
-      </div>
 
-      <div class="copyright">
-        © <span id="anoAtual"></span> Vitrine de Ofertas.
-      </div>
+        <div>
+            <h3>Transparência</h3>
+            <a href="#sobre">Quem somos</a>
+            <a href="#sobre">Aviso de afiliados</a>
+            <a href="#sobre">Informações sobre compras</a>
+        </div>
 
     </div>
-  </footer>
 
-  <script>
-    document.getElementById("anoAtual").textContent =
-      new Date().getFullYear();
+    <div class="rodape-final">
+        © 2026 Vitrine de Ofertas. Site independente de afiliados.
+        Marcas e produtos pertencem aos seus respectivos proprietários.
+    </div>
 
-    const campoBusca = document.getElementById("campoBusca");
-    const formBusca = document.getElementById("formBusca");
-    const cards = [...document.querySelectorAll(".card")];
-    const guias = [...document.querySelectorAll(".guia")];
-    const mensagemVazia = document.getElementById("mensagemVazia");
+</footer>
 
-    function normalizar(texto) {
-      return texto
-        .toLocaleLowerCase("pt-BR")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .trim();
+<script>
+const campoBusca = document.getElementById("campoBusca");
+const formulario = document.getElementById("formBusca");
+const categorias = document.querySelectorAll(".categoria");
+const resultadoBusca = document.getElementById("resultadoBusca");
+const semResultado = document.getElementById("semResultado");
+
+function pesquisar(termo) {
+
+    termo = termo.toLowerCase().trim();
+
+    let encontrados = 0;
+
+    categorias.forEach(categoria => {
+
+        const texto = (
+            categoria.innerText + " " +
+            categoria.dataset.palavras
+        ).toLowerCase();
+
+        const corresponde = texto.includes(termo);
+
+        categoria.classList.toggle("oculto", !corresponde);
+
+        if (corresponde) {
+            encontrados++;
+        }
+    });
+
+    if (termo === "") {
+        categorias.forEach(categoria => {
+            categoria.classList.remove("oculto");
+        });
+
+        resultadoBusca.textContent = "";
+        semResultado.style.display = "none";
+        return;
     }
 
-    function pesquisar(termo) {
-      const busca = normalizar(termo);
-      let encontrados = 0;
+    resultadoBusca.textContent =
+        encontrados + " categoria(s) encontrada(s).";
 
-      cards.forEach(function(card) {
-        const texto = normalizar(
-          card.innerText + " " + (card.dataset.termos || "")
-        );
-
-        const corresponde = !busca || texto.includes(busca);
-        card.hidden = !corresponde;
-
-        if (corresponde) encontrados++;
-      });
-
-      guias.forEach(function(guia) {
-        const texto = normalizar(
-          guia.innerText + " " + (guia.dataset.termos || "")
-        );
-
-        guia.hidden = !!busca && !texto.includes(busca);
-      });
-
-      mensagemVazia.style.display =
+    semResultado.style.display =
         encontrados === 0 ? "block" : "none";
-    }
+}
 
-    formBusca.addEventListener("submit", function(evento) {
-      evento.preventDefault();
-      pesquisar(campoBusca.value);
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-      document.getElementById("ofertas").scrollIntoView({
+    pesquisar(campoBusca.value);
+
+    document.getElementById("categorias").scrollIntoView({
         behavior: "smooth"
-      });
-
-      const url = new URL(window.location.href);
-
-      if (campoBusca.value.trim()) {
-        url.searchParams.set("q", campoBusca.value.trim());
-      } else {
-        url.searchParams.delete("q");
-      }
-
-      history.replaceState({}, "", url);
     });
+});
 
-    campoBusca.addEventListener("input", function() {
-      pesquisar(campoBusca.value);
-    });
-
-    const buscaInicial =
-      new URLSearchParams(window.location.search).get("q");
-
-    if (buscaInicial) {
-      campoBusca.value = buscaInicial;
-      pesquisar(buscaInicial);
-    }
-  </script>
+campoBusca.addEventListener("input", function() {
+    pesquisar(this.value);
+});
+</script>
 
 </body>
 </html>
